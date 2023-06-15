@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class CalculatorServiceImpl implements CalculatorService {
     @Override
     public String greetings() {
-        return "Добро пожаловать в калькулятор";
+        return "Добро пожаловать в калькулятор!";
     }
     @Override
     public String plus(int num1, int num2) {
@@ -23,7 +23,7 @@ public class CalculatorServiceImpl implements CalculatorService {
     @Override
     public String divide(int num1, int num2) {
         if (num2 == 0) {
-            return "На ноль делить нельзя!";
+            throw new IllegalArgumentException("На ноль делить нельзя");
         } else {
             return num1 + " / " + num2 + " = " + ((double)num1 / (double)num2);
         }
